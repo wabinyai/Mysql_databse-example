@@ -1,6 +1,13 @@
 <?php
 // Connect to MySQL
-$link = new mysqli( '127.0.0.1', 'root', '', 'test' );
+////include_once 'password.php',
+///$link = new mysqli( '127.0.0.1', 'root', '', 'test' );
+//////
+include_once 'password.php';  // As functions.php is not included
+$link = new mysqli(HOST, USER, PASSWORD, DATABASE);
+
+
+/////////
 if ( $link->connect_errno ) {
   die( "Failed to connect to MySQL: (" . $link->connect_errno . ") " . $link->connect_error );
 }
